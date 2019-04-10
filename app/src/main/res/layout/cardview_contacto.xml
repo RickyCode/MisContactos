@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvContacto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding"
+    android:layout_marginBottom="@dimen/padding"
+    card_view:cardCornerRadius="@dimen/corner_radius_cardview"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="7dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="@dimen/dimen_imagenes"
+            android:layout_height="@dimen/dimen_imagenes"
+            android:src="@drawable/blank_profile"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            />
+
+        <TextView
+            android:id="@+id/tvNombreCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pnombre"
+            android:textStyle="bold"
+            android:textSize="@dimen/nombre_cardview"
+
+            android:layout_toEndOf="@+id/imgFoto"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginTop="@dimen/top"
+
+            />
+
+        <TextView
+            android:id="@+id/tvTelefonoCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ptelefono"
+            android:textStyle="bold"
+
+            android:layout_toEndOf="@+id/imgFoto"
+            android:layout_below="@+id/tvNombreCV"
+            android:layout_marginStart="@dimen/padding"
+            />
+
+        <ImageButton
+            android:id="@+id/btnLike"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/like"
+            android:backgroundTint="@color/primary"
+
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginTop="@dimen/top"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
