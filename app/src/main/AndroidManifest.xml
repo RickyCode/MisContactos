@@ -3,7 +3,6 @@
     package="com.instagram.rickydelrioguzman.miscontactos">
 
     <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:allowBackup="true"

@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos;
+package com.instagram.rickydelrioguzman.miscontactos.pojo;
 
 public class Contacto {
 

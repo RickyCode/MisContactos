@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.view.View;
 import 	android.net.Uri;
 
+import com.instagram.rickydelrioguzman.miscontactos.fragments.RecyclerViewFragment;
+
 public class DetalleContacto extends AppCompatActivity {
 
     private TextView tvNombre;
@@ -40,6 +42,7 @@ public class DetalleContacto extends AppCompatActivity {
             return;
         }
         startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + telefono))); //Intent implícito
+        
     }
 
     public void enviarEmail(View v) {
@@ -75,9 +78,9 @@ public class DetalleContacto extends AppCompatActivity {
         setSupportActionBar(miActionBar);
 
         posicion = getIntent().getExtras().getInt("POSICION");
-        nombre       = MainActivity.contactos.get(posicion).getNombre();
-        telefono     = MainActivity.contactos.get(posicion).getTelefono();
-        email        = MainActivity.contactos.get(posicion).getEmail();
+        nombre       = RecyclerViewFragment.contactos.get(posicion).getNombre();
+        telefono     = RecyclerViewFragment.contactos.get(posicion).getTelefono();
+        email        = RecyclerViewFragment.contactos.get(posicion).getEmail();
 
 //        parametros   = getIntent().getExtras();
 //        nombre       = parametros.getString(getResources().getString(R.string.pnombre));

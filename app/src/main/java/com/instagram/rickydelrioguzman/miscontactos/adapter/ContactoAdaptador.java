@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos;
+package com.instagram.rickydelrioguzman.miscontactos.adapter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
+
+import com.instagram.rickydelrioguzman.miscontactos.pojo.Contacto;
+import com.instagram.rickydelrioguzman.miscontactos.DetalleContacto;
+import com.instagram.rickydelrioguzman.miscontactos.R;
 
 import java.util.ArrayList;
 
