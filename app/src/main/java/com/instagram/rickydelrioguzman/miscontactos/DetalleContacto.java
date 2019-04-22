@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.view.View;
 import 	android.net.Uri;
 
-import com.instagram.rickydelrioguzman.miscontactos.fragments.RecyclerViewFragment;
+import com.instagram.rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 
 public class DetalleContacto extends AppCompatActivity {
 

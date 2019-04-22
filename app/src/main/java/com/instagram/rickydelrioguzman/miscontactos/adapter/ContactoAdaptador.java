@@ -41,12 +41,13 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactoViewHolder contactoViewHolder, final int position) {
+    public void onBindViewHolder(final @NonNull ContactoViewHolder contactoViewHolder, final int position) {
         //asocia cada elemento de la lista con cada view
         final Contacto contacto = contactos.get(position); //Se invoca por cada elemento
         contactoViewHolder.imgFoto.setImageResource(contacto.getFoto());
         contactoViewHolder.tvNombreCV.setText(contacto.getNombre());
         contactoViewHolder.tvTelefonoCV.setText(contacto.getTelefono());
+        contactoViewHolder.tvLikes.setText(contacto.getLikes()+ " Likes");
 
         contactoViewHolder.itemCardView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -62,10 +63,14 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                contacto.setLikes(contacto.getLikes()+1);
+                contactoViewHolder.tvLikes.setText(contacto.getLikes()+ " Likes");
                 String texto = "Diste like a: " + contacto.getNombre();
                 Toast.makeText(activity, texto, Toast.LENGTH_SHORT).show();
             }
         });
+        
+        
 
     }
 
@@ -81,6 +86,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         private TextView tvTelefonoCV;
         private View itemCardView;
         private ImageButton btnLike;
+        private TextView tvLikes;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -89,6 +95,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             tvNombreCV   = (TextView) itemView.findViewById(R.id.tvNombreCV);
             tvTelefonoCV = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
             btnLike      = (ImageButton) itemView.findViewById(R.id.btnLike);
+            tvLikes      = itemView.findViewById(R.id.tvLikesCV);
         }
     }
 

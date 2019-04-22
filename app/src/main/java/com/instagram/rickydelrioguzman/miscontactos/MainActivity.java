@@ -5,17 +5,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 //import android.widget.Toolbar;
 import android.support.v7.widget.Toolbar;
 
 
-import com.instagram.rickydelrioguzman.miscontactos.adapter.ContactoAdaptador;
 import com.instagram.rickydelrioguzman.miscontactos.adapter.PageAdapter;
-import com.instagram.rickydelrioguzman.miscontactos.fragments.PerfilFragment;
-import com.instagram.rickydelrioguzman.miscontactos.fragments.RecyclerViewFragment;
-import com.instagram.rickydelrioguzman.miscontactos.pojo.Contacto;
+import com.instagram.rickydelrioguzman.miscontactos.view_fragments.PerfilFragment;
+import com.instagram.rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 

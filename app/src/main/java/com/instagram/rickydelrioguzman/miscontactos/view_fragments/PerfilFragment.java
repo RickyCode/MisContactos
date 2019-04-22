@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos.fragments;
+package com.instagram.rickydelrioguzman.miscontactos.view_fragments;
 
 
 import android.os.Bundle;
