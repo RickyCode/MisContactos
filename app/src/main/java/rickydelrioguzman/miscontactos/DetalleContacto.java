@@ -14,6 +14,7 @@ import 	android.net.Uri;
 
 import rickydelrioguzman.miscontactos.R;
 
+import rickydelrioguzman.miscontactos.presentador.RecyclerViewFragmentPresenter;
 import rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 
 public class DetalleContacto extends AppCompatActivity {
@@ -80,9 +81,9 @@ public class DetalleContacto extends AppCompatActivity {
         setSupportActionBar(miActionBar);
 
         posicion = getIntent().getExtras().getInt("POSICION");
-        nombre       = RecyclerViewFragment.contactos.get(posicion).getNombre();
-        telefono     = RecyclerViewFragment.contactos.get(posicion).getTelefono();
-        email        = RecyclerViewFragment.contactos.get(posicion).getEmail();
+        nombre       = RecyclerViewFragmentPresenter.contactos.get(posicion).getNombre();
+        telefono     = RecyclerViewFragmentPresenter.contactos.get(posicion).getTelefono();
+        email        = RecyclerViewFragmentPresenter.contactos.get(posicion).getEmail();
 
 //        parametros   = getIntent().getExtras();
 //        nombre       = parametros.getString(getResources().getString(R.string.pnombre));

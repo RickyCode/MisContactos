@@ -16,7 +16,11 @@ public class Contacto {
         this.email = email;
         this.likes = 0;
     }
-
+    
+    public Contacto() {
+    
+    }
+    
     public int getFoto() {
         return foto;
     }

@@ -12,52 +12,48 @@ import android.view.ViewGroup;
 import rickydelrioguzman.miscontactos.R;
 import rickydelrioguzman.miscontactos.adapter.ContactoAdaptador;
 import rickydelrioguzman.miscontactos.pojo.Contacto;
+import rickydelrioguzman.miscontactos.presentador.IRecyclerViewFragmentPresenter;
+import rickydelrioguzman.miscontactos.presentador.RecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView{
     
     private RecyclerView listaContactos;
     static public ArrayList<Contacto> contactos;
+    private IRecyclerViewFragmentPresenter presenter;
     
-    public void inicializarListaContactos() {
-        contactos = new ArrayList<Contacto>();
-        // Población de la lista:
-        contactos.add(new Contacto(R.drawable.blank_profile, "Ricardo Del Río", "77779999", "ricky@mail.com", 0));
-        contactos.add(new Contacto(R.drawable.shadow ,"Pedro Sanchez", "88882222", "algo@otroalgo.com", 0));
-        contactos.add(new Contacto(R.drawable.eyes ,"Mireya Martinez", "33331111", "algo@otroalgo.com", 0));
-        contactos.add(new Contacto(R.drawable.violet_blue ,"Juan Lopez", "44442222", "algo@otroalgo.com", 0));
-        contactos.add(new Contacto(R.drawable.blank_profile ,"Anita Morales", "12341234", "algo@otroalgo.com", 0));
-        contactos.add(new Contacto(R.drawable.cat ,"Javiera Soto", "56785678", "algo@otroalgo.com", 0));
-        
-    }
-    
-    public void inicializarAdapador() {
-        ContactoAdaptador adaptador = new ContactoAdaptador(contactos, getActivity());
-        listaContactos.setAdapter(adaptador);
-    }
-
     
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Asociación del código java con el formato XML
         View v = inflater.inflate(R.layout.fragment_recycler_view, container, false); // Equivale al "setContentView"  de una activity
-        
         listaContactos = (RecyclerView) v.findViewById(R.id.rvContactos);
+        presenter = new RecyclerViewFragmentPresenter(this, getContext()); // Esto es lo que reemplaza "inicializarcontactos()"
+//        inicializarListaContactos();
+        return v;
+    }
     
+    @Override
+    public void generarLinearLayoutVertical() {
         // Forma en que se muestra el "RecyclerView":
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaContactos.setLayoutManager(llm);
-        
 //        GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
 //        listaContactos.setLayoutManager(glm);
-        
-        inicializarListaContactos();
-        inicializarAdapador();
-    
-        return v;
     }
     
+    @Override
+    public ContactoAdaptador crearAdaptador(ArrayList<Contacto> contactos) {
+        ContactoAdaptador adaptador = new ContactoAdaptador(contactos, getActivity());
+        
+        return adaptador;
+    }
+    
+    @Override
+    public void inicializarAdaptadorRV(ContactoAdaptador adaptador) {
+        listaContactos.setAdapter(adaptador);
+    }
 }
