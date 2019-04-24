@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos.view_fragments;
+package rickydelrioguzman.view_fragments;
 
 
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.instagram.rickydelrioguzman.miscontactos.R;
+import rickydelrioguzman.miscontactos.R;
 
 
 /**

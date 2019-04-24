@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos;
+package rickydelrioguzman;
 
 import org.junit.Test;
 

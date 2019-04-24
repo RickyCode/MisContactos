@@ -1,4 +1,4 @@
-package com.instagram.rickydelrioguzman.miscontactos;
+package rickydelrioguzman;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,7 +12,9 @@ import android.widget.TextView;
 import android.view.View;
 import 	android.net.Uri;
 
-import com.instagram.rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
+import rickydelrioguzman.miscontactos.R;
+
+import rickydelrioguzman.view_fragments.RecyclerViewFragment;
 
 public class DetalleContacto extends AppCompatActivity {
 
