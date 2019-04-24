@@ -1,4 +1,4 @@
-package rickydelrioguzman;
+package rickydelrioguzman.miscontactos;
 
 import org.junit.Test;
 

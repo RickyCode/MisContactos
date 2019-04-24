@@ -1,4 +1,4 @@
-package rickydelrioguzman.adapter;
+package rickydelrioguzman.miscontactos.adapter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
 
-import rickydelrioguzman.pojo.Contacto;
-import rickydelrioguzman.DetalleContacto;
+import rickydelrioguzman.miscontactos.pojo.Contacto;
+import rickydelrioguzman.miscontactos.DetalleContacto;
 import rickydelrioguzman.miscontactos.R;
 
 import java.util.ArrayList;

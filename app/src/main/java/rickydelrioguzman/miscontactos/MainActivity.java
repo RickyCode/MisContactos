@@ -1,4 +1,4 @@
-package rickydelrioguzman;
+package rickydelrioguzman.miscontactos;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,9 +12,9 @@ import android.support.v7.widget.Toolbar;
 
 import rickydelrioguzman.miscontactos.R;
 
-import rickydelrioguzman.adapter.PageAdapter;
-import rickydelrioguzman.view_fragments.PerfilFragment;
-import rickydelrioguzman.view_fragments.RecyclerViewFragment;
+import rickydelrioguzman.miscontactos.adapter.PageAdapter;
+import rickydelrioguzman.miscontactos.view_fragments.PerfilFragment;
+import rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 

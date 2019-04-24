@@ -1,4 +1,4 @@
-package rickydelrioguzman;
+package rickydelrioguzman.miscontactos;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import 	android.net.Uri;
 
 import rickydelrioguzman.miscontactos.R;
 
-import rickydelrioguzman.view_fragments.RecyclerViewFragment;
+import rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 
 public class DetalleContacto extends AppCompatActivity {
 

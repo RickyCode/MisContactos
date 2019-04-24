@@ -1,4 +1,4 @@
-package rickydelrioguzman;
+package rickydelrioguzman.miscontactos;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

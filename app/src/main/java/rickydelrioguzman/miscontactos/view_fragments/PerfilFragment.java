@@ -1,4 +1,4 @@
-package rickydelrioguzman.view_fragments;
+package rickydelrioguzman.miscontactos.view_fragments;
 
 
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package rickydelrioguzman.pojo;
+package rickydelrioguzman.miscontactos.pojo;
 
 public class Contacto {
     
