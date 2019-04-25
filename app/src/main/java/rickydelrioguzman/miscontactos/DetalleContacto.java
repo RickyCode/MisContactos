@@ -45,8 +45,9 @@ public class DetalleContacto extends AppCompatActivity {
             return;
         }
         startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + telefono))); //Intent implícito
-        
     }
+    
+    
 
     public void enviarEmail(View v) {
         String email       = tvEmail.getText().toString();
@@ -61,6 +62,7 @@ public class DetalleContacto extends AppCompatActivity {
     }
 
 
+    
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // Cuando se presiona el botón para volver a atrás se vuelve a abrir "MainActivity"
@@ -72,6 +74,8 @@ public class DetalleContacto extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

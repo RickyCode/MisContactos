@@ -18,10 +18,17 @@ import rickydelrioguzman.miscontactos.presentador.RecyclerViewFragmentPresenter;
 import java.util.ArrayList;
 
 public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView{
+    // Esta clase es la encargada de generar y configurar la vista del "RecyclerView" y el
+    // "Fragment" o "Layout" en el que se encontrará dicho "RecyclerView"
+    // Esta clase es utilizada en el presetnador
     
+    
+    
+    // Declaraciones:
     private RecyclerView listaContactos;
     static public ArrayList<Contacto> contactos;
     private IRecyclerViewFragmentPresenter presenter;
+    
     
     
     @Nullable
@@ -35,6 +42,8 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
         return v;
     }
     
+    
+    
     @Override
     public void generarLinearLayoutVertical() {
         // Forma en que se muestra el "RecyclerView":
@@ -45,12 +54,16 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
 //        listaContactos.setLayoutManager(glm);
     }
     
+    
+    
     @Override
     public ContactoAdaptador crearAdaptador(ArrayList<Contacto> contactos) {
         ContactoAdaptador adaptador = new ContactoAdaptador(contactos, getActivity());
         
         return adaptador;
     }
+    
+    
     
     @Override
     public void inicializarAdaptadorRV(ContactoAdaptador adaptador) {

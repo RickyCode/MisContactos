@@ -19,6 +19,9 @@ import rickydelrioguzman.miscontactos.view_fragments.RecyclerViewFragment;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    
+    
+    
     // Declaración de "Views" utilizadas:
     // Aquí sólo van las "Views" sobre las que se realiza alguna acción
     ListView lstContactos;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     
+    
+    
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new RecyclerViewFragment());
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         
         return fragments;
     }
+    
+    
     
     private void setUpViewPager(){
         // Pone en orbita los fragments
@@ -44,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_action_name);
     }
 
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,15 +65,16 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
-
-
         
         if (toolBar != null){
             setSupportActionBar(toolBar);
         }
+    }
+}
 
-        
 
+
+// ESTO SE USABA ANTES DE LAS BASES DE DATOS:
 
 //        // Se crea un "ArrayList" con los nombres de cada contacto:
 //        ArrayList<String> nombresContactos = new ArrayList<>();
@@ -93,6 +103,3 @@ public class MainActivity extends AppCompatActivity {
 //                finish();  //Cierra esta "activity" para que solo la siguiente esté en memoria
 //            }
 //        });
-
-    }
-}

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
 
+import rickydelrioguzman.miscontactos.db.ConstructorContactos;
 import rickydelrioguzman.miscontactos.pojo.Contacto;
 import rickydelrioguzman.miscontactos.DetalleContacto;
 import rickydelrioguzman.miscontactos.R;
@@ -24,6 +25,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     ArrayList<Contacto> contactos;
     Activity activity;
 
+    
 
     public ContactoAdaptador(ArrayList<Contacto> contactos, Activity activity){
         this.contactos = contactos;
@@ -31,6 +33,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     }
 
 
+    
     @NonNull
     @Override
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -40,6 +43,8 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         return new ContactoViewHolder(v);
     }
 
+    
+    
     @Override
     public void onBindViewHolder(final @NonNull ContactoViewHolder contactoViewHolder, final int position) {
         //asocia cada elemento de la lista con cada view
@@ -63,17 +68,21 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                contacto.setLikes(contacto.getLikes()+1);
-                contactoViewHolder.tvLikes.setText(contacto.getLikes()+ " Likes");
+//                contacto.setLikes(contacto.getLikes()+1);
+//                contactoViewHolder.tvLikes.setText(contacto.getLikes()+ " Likes");
                 String texto = "Diste like a: " + contacto.getNombre();
                 Toast.makeText(activity, texto, Toast.LENGTH_SHORT).show();
+    
+                ConstructorContactos constructorContactos = new ConstructorContactos(activity);
+                constructorContactos.darLikeContacto(contacto);
+                contactoViewHolder.tvLikes.setText(
+                        String.valueOf(constructorContactos.obtenerLikesContacto(contacto))+ " Likes");
             }
         });
-        
-        
-
     }
 
+    
+    
     @Override
     public int getItemCount() { //Cantidad de elementos que contiene mi lista
         return contactos.size();
