@@ -3,6 +3,7 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
@@ -142,5 +143,12 @@ public class BaseDatos extends SQLiteOpenHelper {
         
         
         return likes;
+    }
+    
+    public long getContactsCount() {
+        SQLiteDatabase db = getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db, TABLE_CONTACTS);
+        db.close();
+        return count;
     }
 }

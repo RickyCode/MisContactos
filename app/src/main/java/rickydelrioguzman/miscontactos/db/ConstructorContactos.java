@@ -3,11 +3,13 @@ package rickydelrioguzman.miscontactos.db;
 import android.content.ContentValues;
 import android.content.Context;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import rickydelrioguzman.miscontactos.R;
 import rickydelrioguzman.miscontactos.pojo.Contacto;
 
+import static rickydelrioguzman.miscontactos.db.ConstantesBaseDatos.DATABASE_NAME;
 import static rickydelrioguzman.miscontactos.db.ConstantesBaseDatos.TABLE_CONTACTS_EMAIL;
 import static rickydelrioguzman.miscontactos.db.ConstantesBaseDatos.TABLE_CONTACTS_FOTO;
 import static rickydelrioguzman.miscontactos.db.ConstantesBaseDatos.TABLE_CONTACTS_NOMBRE;
@@ -31,7 +33,7 @@ public class ConstructorContactos {
     public ConstructorContactos(Context context) {
         this.context = context;
         this.db = new BaseDatos(context);
-        insertarSieteContactos(db);
+        populateDataBase();
     }
     
     
@@ -40,6 +42,19 @@ public class ConstructorContactos {
         //MOVIDO AL CONSTRUCTOR: BaseDatos db = new BaseDatos(context);
         // MOVIDO AL CONSTRUCTOR: insertarSieteContactos(db);
         return db.obtenerTodosLosContactos();
+    }
+    
+//    private static boolean doesDatabaseExist(Context context, String dbName) {
+//        File dbFile = context.getDatabasePath(dbName);
+//        return dbFile.exists();
+//    }
+//
+//    private void populateDataBase(){
+//        if (doesDatabaseExist(context, DATABASE_NAME)){ insertarSieteContactos(db);}
+//    }
+    
+    private void populateDataBase(){
+        if (db.getContactsCount() == 0){ insertarSieteContactos(db);}
     }
     
     
